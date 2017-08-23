@@ -14,10 +14,12 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:onClick="ViewPost"/>
 
-    <ListView
+    <TextView
         android:id="@+id/mylistview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:textColor="#000"
         />
 
 

@@ -2,7 +2,7 @@ package com.example.sherif.networcallbacks;
 
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ListView;
+import android.widget.TextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,10 +18,10 @@ import java.net.URL;
 
 class  RetrieveFeedTask extends AsyncTask<Void, Void, String> {
         String list[];
-        ListView responseView;
+        TextView responseView;
         private Exception exception;
 
-        public RetrieveFeedTask (ListView listView)
+        public RetrieveFeedTask (TextView listView)
         {
                 responseView =listView;
         }
@@ -45,6 +45,7 @@ protected String doInBackground(Void... urls) {
         stringBuilder.append(line).append("\n");
         }
         bufferedReader.close();
+
         return stringBuilder.toString();
         }
         finally{
@@ -69,7 +70,6 @@ protected void onPostExecute(String response) {
         try {
                 JSONObject jsonObject = new JSONObject(response);
                 jsonObject.getJSONObject(response);
-
 
         } catch (JSONException e) {
                 e.printStackTrace();
