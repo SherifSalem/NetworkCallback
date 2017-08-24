@@ -2,10 +2,11 @@ package com.example.sherif.networcallbacks;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -18,16 +19,20 @@ import java.net.URL;
 
 class  RetrieveFeedTask extends AsyncTask<Void, Void, String> {
         String list[];
-        TextView responseView;
-        private Exception exception;
+         TextView responseView;
+        ProgressBar progressBar;
 
-        public RetrieveFeedTask (TextView listView)
+
+
+        public RetrieveFeedTask (TextView textView)
         {
-                responseView =listView;
+                responseView = textView;
         }
+
 protected void onPreExecute() {
         //progressBar.setVisibility(View.VISIBLE);
-       // responseView.setText("");
+        responseView.setText("");
+
         }
 
 protected String doInBackground(Void... urls) {
@@ -47,6 +52,7 @@ protected String doInBackground(Void... urls) {
         bufferedReader.close();
 
         return stringBuilder.toString();
+
         }
         finally{
         urlConnection.disconnect();
@@ -63,13 +69,14 @@ protected void onPostExecute(String response) {
         response = "THERE WAS AN ERROR";
         }
 
-       // progressBar.setVisibility(View.GONE);
+      // progressBar.setVisibility(View.GONE);
         Log.i("INFO", response);
 
 
         try {
-                JSONObject jsonObject = new JSONObject(response);
-                jsonObject.getJSONObject(response);
+
+             JSONArray jsonArray = new JSONArray(response);
+               responseView.setText(jsonArray.toString());
 
         } catch (JSONException e) {
                 e.printStackTrace();

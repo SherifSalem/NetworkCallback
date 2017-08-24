@@ -10,7 +10,7 @@ import static android.util.Log.d;
 
 public class MainActivity extends AppCompatActivity {
     Button btn;
-    TextView listView;
+    TextView textView;
     private static int POST_REQUEST = 1;
 
     @Override
@@ -20,14 +20,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         btn = (Button) findViewById(R.id.view_post);
-        listView = (TextView) findViewById(R.id.mylistview);
+        textView = (TextView) findViewById(R.id.mytextview);
 
     }
 
     public void ViewPost(View view) {
             d("ViewPost", "view post");
 
-         new RetrieveFeedTask(listView).execute();
+         new RetrieveFeedTask(textView).execute();
+
 
 
         }
