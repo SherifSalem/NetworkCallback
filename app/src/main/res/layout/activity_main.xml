@@ -13,8 +13,8 @@
         android:text="@string/view_post"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:onClick="ViewPost"/>
-    <TextView
-        android:id="@+id/mytextview"
+    <ListView
+        android:id="@+id/mylistview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="15dp"

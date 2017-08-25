@@ -2,11 +2,13 @@ package com.example.sherif.networcallbacks;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -19,14 +21,14 @@ import java.net.URL;
 
 class  RetrieveFeedTask extends AsyncTask<Void, Void, String> {
         String list[];
-         TextView responseView;
+         ListView responseView;
         ProgressBar progressBar;
 
 
 
-        public RetrieveFeedTask (TextView textView)
+        public RetrieveFeedTask (ListView listView)
         {
-                responseView = textView;
+                responseView = listView;
         }
 
 protected void onPreExecute() {
@@ -75,12 +77,13 @@ protected void onPostExecute(String response) {
 
         try {
 
-             JSONArray jsonArray = new JSONArray(response);
-               responseView.setText(jsonArray.toString());
+             JSONObject jsonArray = new JSONObject(response);
+               responseView.;
 
         } catch (JSONException e) {
                 e.printStackTrace();
         }
 
         }
+
         }
