@@ -74,7 +74,6 @@ protected void onPostExecute(String response) {
         if(response == null) {
         response = "THERE WAS AN ERROR";
         }
-
       // progressBar.setVisibility(View.GONE);
         Log.i("INFO", response);
 
