@@ -2,22 +2,16 @@ package com.example.sherif.networcallbacks;
 
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import static android.R.id.list;
-import static android.R.id.list_container;
 
 /**
  * Created by sherif on 18/08/17.
@@ -37,7 +31,7 @@ class  RetrieveFeedTask extends AsyncTask<Void, Void, String> {
 
 protected void onPreExecute() {
         //progressBar.setVisibility(View.VISIBLE);
-        responseView.setText("");
+        //responseView.setText("");
 
         }
 
@@ -77,14 +71,12 @@ protected void onPostExecute(String response) {
       // progressBar.setVisibility(View.GONE);
         Log.i("INFO", response);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,list,);
+
         try {
 
              JSONArray jsonArray = new JSONArray(response);
-               responseView.setAdapter(adapter);
-                for (int i = 0; i<jsonArray.length();i++) {
-                        jsonArray.getString(jsonArray.getInt(0));
-                }
+               
+
         } catch (JSONException e) {
                 e.printStackTrace();
         }
