@@ -26,8 +26,7 @@ public class MainActivity extends AppCompatActivity {
         btn = (Button) findViewById(R.id.view_post);
         listView = (ListView) findViewById(R.id.mylistview);
 
-        ListViewAdapter listViewAdapter = new ListViewAdapter();
-        listView.setAdapter(listViewAdapter);
+
 
     }
 
