@@ -2,4 +2,8 @@
     <string name="app_name">NetworCallbacks</string>
     <string name="input_post_id">Input Post ID</string>
     <string name="view_post">View Post</string>
+    <string name="user_id">UserID :</string>
+    <string name="comment_id">Comment Number :</string>
+    <string name="title">Title</string>
+    <string name="Body">Body</string>
 </resources>
